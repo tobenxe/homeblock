@@ -1,12 +1,18 @@
 import React, { Component }  from 'react';
-import ReactDOM from 'react-dom';
-
+import Toolbar from './components/Toolbar';
+import BlockList from './components/BlockList';
 
 export default class App extends Component {
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return (
-            //This all gets transpiled to React.createElement
-            <h1>HOME BLOCK </h1>
+            <main className="container">
+            <Toolbar/>
+            <BlockList/>
+            </main>
         )
     }
 

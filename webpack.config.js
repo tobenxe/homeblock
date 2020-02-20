@@ -2,16 +2,20 @@
 const path = require('path');
 const  HtmlWebpackPlugin =  require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+
 module.exports = {
     entry:'./app/index.js',
+    optimization: {
+        minimize: false
+    },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
         port: 5000
-      },
+    },
     output : {
         path : path.resolve(__dirname , 'dist'),
-        filename: 'bundle.js'
+        filename: 'main.js'
     },
     module : {
         rules: [
@@ -27,6 +31,7 @@ module.exports = {
             {
                 from: "chrome",
               }
+
           ])
     ]
 }
