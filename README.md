@@ -4,6 +4,8 @@ A customizable dashboard for your new tab.
 
 ![Homeblocks image](./chrome/icons/icon128.png)
 
+Homeblocks is made with React.js, Webpack, Babel & Tested with Jest
+
 ## Features 
 - Add custom background page
 - Pick blocks to display
