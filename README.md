@@ -1,16 +1,16 @@
 
-# Homeblocks
+# Homeblock
 A customizable dashboard for your new tab.
 
-![Homeblocks image](./chrome/icons/icon128.png)
+![Homeblock image](./chrome/icons/icon128.png)
 
-Homeblocks is made with React.js, Webpack, Babel & Tested with Jest
+Homeblock is made with React.js, Webpack, Babel & Tested with Jest
 
 ## Features 
 - Add custom background page
 - Pick blocks to display
 Blocks Available:
-- Current Date + Clock.
+- Current Date + Time.
 - Weather
 - Todo
 
