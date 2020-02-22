@@ -4,9 +4,12 @@ A customizable dashboard for your new tab.
 
 ![Homeblock image](./chrome/icons/icon128.png)
 
-Homeblock is made with React.js, Webpack, Babel & Tested with Jest
+Homeblock is 
+- Made with React.js
+- Compiled with Babel & Bundled with Webpack
+- Tested with Jest 
 
-## Features 
+## Features:
 - Add custom background page
 - Pick blocks to display
 Blocks Available:
@@ -14,9 +17,20 @@ Blocks Available:
 - Weather
 - Todo
 
-## Todos
-- [ ] Persist goals.
-- [ ] Progress bar.
-- [ ] Create year progress bar block.
-- [ ] Drag to edit position in settings page
-- [ ] Possible: make blocks into carousel ?
+## Todos:
+- [ ] Work on Settings Modal.
+- [ ] Persist data.
+- [ ] Integrate chrome api's (Mostly storage api).
+- [ ] Implement redux.
+
+## Ideas:
+### Blocks
+- Create year progress bar block.
+- Stocks.
+- Server Status (Maybe colored dots: {red:down, green:up} + Notifications in browser).
+
+### Dashboard UI
+- Drag to edit position of block.
+- Create different views (Grid, List, Carousel ?).
+- Click block to open modal with more information.
+- Random Quote from Goodreads (or editable).
