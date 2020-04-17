@@ -19,6 +19,8 @@ Blocks Available:
 
 ## Todos:
 - [ ] Work on Settings Modal.
+- [ ] Work on weather block.
+- [ ] Work on todo block
 - [ ] Persist data.
 - [ ] Integrate chrome api's (Mostly storage api).
 - [ ] Implement redux.
