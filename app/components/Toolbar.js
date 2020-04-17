@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Toolbar = (props)=>{
+const Toolbar = ({toggleSettings})=>{
     return (
         <div  className= "toolbar">
-            <span role="img"  aria-label="Settings Icon">⚙</span>
+            <span onClick={toggleSettings} role="img"  aria-label="Settings Icon">⚙</span>
         </div>
     )
 }
