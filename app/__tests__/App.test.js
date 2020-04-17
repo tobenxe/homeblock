@@ -14,7 +14,7 @@ describe('Main app component', () => {
 /* -------- BLOCK LIST --------- */
 
 describe('BlockList Component', () => {
-    it('should render with  children', () => {
+    it('should render without  children initially', () => { //undecided yet
     });
 
 });
