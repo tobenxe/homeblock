@@ -4,7 +4,7 @@ import WeatherBlock from './Blocks/WeatherBlock';
 import TodoBlock from './Blocks/TodoBlock';
 
 const Block = ({block}) =>{
-    const CurrentBlock;
+    let CurrentBlock;
     switch(block.id){
         case 1:
             CurrentBlock = <ClockBlock/>;
