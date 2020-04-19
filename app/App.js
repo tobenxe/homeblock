@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import Toolbar from './components/Toolbar';
-import SettingsModal from './components/Settings/SettingsModal';
+import Modal from './components/Settings/Modal';
 import BlockList from './components/BlockList';
 import './style.css';
 
@@ -8,18 +8,36 @@ export default class App extends Component {
     constructor(props){
         super(props);
         this.state = { 
-            settingsShown: false,
+            modalShown: false,
             settings: {},
+            blocks: [
+                     {
+                        id: 1,
+                        name: 'Clock',
+                        shown: false,
+                    }, 
+                    {
+                        id:2,
+                        name: 'Weather',
+                        shown: false,
+                    }, 
+                    {
+                        id:3,
+                        name: 'Todo List',
+                        shown: false,
+                    },
+                ]
+         
         }
     }
-    //Handles the opening and closing of the settings modal
-    toggleSettings = ()=>  this.setState({settingsShown: this.state.settingsShown ? false:true });
+    toggleModal = (modalName) => this.setState({ modalShown: modalName});
+    removeBlock = (blockId) => this.setState({blocks: this.state.blocks.map(block => blockId === block.id ? {...block, shown:false} : block) })
     render(){
         return (
             <main className="container">
-                { this.state.settingsShown && <SettingsModal /> } 
-                <Toolbar toggleSettings={this.toggleSettings} />
-                <BlockList/>
+                { this.state.modalShown && <Modal toggleModal={this.toggleModal} name={this.state.modalShown}/> } 
+                <Toolbar toggleModal={this.toggleModal} />
+                <BlockList removeBlock={this.removeBlock}  blocks={this.state.blocks.map(block=>block.shown)}/>
             </main>
         )
     }

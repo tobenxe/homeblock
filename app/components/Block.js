@@ -3,7 +3,7 @@ import ClockBlock from './Blocks/ClockBlock';
 import WeatherBlock from './Blocks/WeatherBlock';
 import TodoBlock from './Blocks/TodoBlock';
 
-const Block = ({block}) =>{
+const Block = ({block, removeBlock}) =>{
     let CurrentBlock;
     switch(block.id){
         case 1:
@@ -19,8 +19,11 @@ const Block = ({block}) =>{
 
     return(
             <div className= "block">
-            <CurrentBlock/> 
+                <div className="block__buttons">
+                    <span onClick={removeBlock} className="block__buttons-close">x</span>
+                </div>    
+                <CurrentBlock/> 
             </div>
-    )
+        )
 }
 export default Block;
