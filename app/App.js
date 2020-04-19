@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import Toolbar from './components/Toolbar';
-import Modal from './components/Settings/Modal';
+import Modal from './components/Modals/Modal';
 import BlockList from './components/BlockList';
 import './style.css';
 
@@ -30,12 +30,22 @@ export default class App extends Component {
          
         }
     }
+
     toggleModal = (modalName) => this.setState({ modalShown: modalName});
-    removeBlock = (blockId) => this.setState({blocks: this.state.blocks.map(block => blockId === block.id ? {...block, shown:false} : block) })
+    removeBlock = (blockId) => this.setState({blocks: this.state.blocks.map(block => blockId === block.id ? {...block, shown:false} : block) });
+    saveHandler = (data, type) => this.setState({[type]: data});
+
     render(){
         return (
             <main className="container">
-                { this.state.modalShown && <Modal toggleModal={this.toggleModal} name={this.state.modalShown}/> } 
+                { this.state.modalShown && 
+                    <Modal
+                    saveHandler={this.saveHandler}
+                    blocks={this.state.blocks} 
+                    toggleModal={this.toggleModal} 
+                    modalName={this.state.modalShown}
+                    /> 
+                } 
                 <Toolbar toggleModal={this.toggleModal} />
                 <BlockList removeBlock={this.removeBlock}  blocks={this.state.blocks.map(block=>block.shown)}/>
             </main>
