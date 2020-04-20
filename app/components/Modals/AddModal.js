@@ -26,7 +26,7 @@ class AddModal extends Component {
                 return (
                     <div className="modal__list-item"> 
                     <label for={item.id}>☰ {item.name}</label>
-                    <input id={item.id} type="checkbox" value={item.id} className="modal__checkbox" onClick={this.handleCheck}  />
+                    <input id={item.id} type="checkbox" value={item.id} className="modal__checkbox" onClick={(e)=>this.handleCheck(e.target)}  />
                     </div>
                 )
         

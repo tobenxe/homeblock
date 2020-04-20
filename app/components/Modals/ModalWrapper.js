@@ -1,18 +1,18 @@
 
 import React from 'react';
 
-const ModalWrapper = ({toggleModal, saveData})=>{
+const ModalWrapper = (props)=>{
         return(
-            <div onClick={()=> {if(e.target === e.currentTarget) toggleModal() } } >
+            <div onClick={(e)=> {if(e.target === e.currentTarget) props.toggleModal() } } >
                 {props.children}
                 <div>
                     <button onClick={()=>{
-                        saveData();
-                        toggleModal();
+                        props.saveData();
+                        props.toggleModal();
                     }}>
                     Save
                     </button>
-                    <button onClick={toggleModal}>Close</button>
+                    <button onClick={props.toggleModal}>Close</button>
                 </div>
             </div>
         )

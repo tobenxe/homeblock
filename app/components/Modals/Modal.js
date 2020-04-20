@@ -2,17 +2,14 @@ import React from 'react';
 import AddModal from './AddModal'
 import SettingsModal from './SettingsModal'
 
-const Modal = ({modalName, toggleModal, blocks, saveHandler}) =>{
-    let CurrentModal;
-    switch(modalName){
+const Modal = (props) =>{
+    switch(props.modalName){
         case 'addModal':
-            CurrentModal = <AddModal  blocks={blocks}/>; //test
-            break;
+            return <AddModal {...props}/>
         case 'settingsModal':
-            CurrentModal = <SettingsModal/>;
-            break;
+            return <SettingsModal {...props}/>
+        default:
+            return null
     }
-
-    return  <CurrentModal saveHandler={saveHandler} toggleModal={toggleModal} />
 }
 export default Modal;
