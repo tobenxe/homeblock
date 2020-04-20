@@ -1,6 +1,5 @@
 
 import React from 'react';
-import ModalWrapper from './ModalWrapper'
 
 const ModalWrapper = ({toggleModal, saveData})=>{
         return(
