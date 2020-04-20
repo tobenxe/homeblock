@@ -8,7 +8,7 @@ export default class App extends Component {
     constructor(props){
         super(props);
         this.state = { 
-            modalShown: false,
+            modalShown: null,
             settings: {},
             blocks: [
                      {
@@ -31,7 +31,7 @@ export default class App extends Component {
         }
     }
 
-    toggleModal = (modalName) => this.setState({ modalShown: modalName});
+    toggleModal = (modalName) => this.setState({ modalShown: modalName ? modalName:null});
     removeBlock = (blockId) => this.setState({blocks: this.state.blocks.map(block => blockId === block.id ? {...block, shown:false} : block) });
     saveHandler = (data, type) => this.setState({[type]: data});
 
@@ -47,7 +47,11 @@ export default class App extends Component {
                     /> 
                 } 
                 <Toolbar toggleModal={this.toggleModal} />
-                <BlockList removeBlock={this.removeBlock}  blocks={this.state.blocks.map(block=>block.shown)}/>
+                <BlockList 
+                    removeBlock={this.removeBlock}  
+                    blocks={this.state.blocks.filter(block=>block.shown)}
+                 />
+
             </main>
         )
     }
