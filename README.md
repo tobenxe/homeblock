@@ -1,13 +1,12 @@
 
 # Homeblock
 A customizable dashboard for your new tab.
-
 ![Homeblock image](./chrome/icons/icon128.png)
-
 Homeblock is 
 - Made with React.js
 - Compiled with Babel & Bundled with Webpack
 - Tested with Jest 
+- Still being developed lol.
 
 ## Features:
 - Add custom background page
